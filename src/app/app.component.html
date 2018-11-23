@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-light text-center">
+    <span class="nav navbar-nav text-cente mb-0 h1">FOOD ITEMS</span>
+  </nav>
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-2 col-md-4 col-6 mb-0 mt-0"  *ngFor="let photo of flickerList.photos.photo | paginate: { id: 'server', itemsPerPage: 30, currentPage: p, totalItems: flickerList.total_count };let idx = index;">
+      <div class="body">
+       <a href="" target="_blank">
+          <img src="{{'http://farm'+photo.farm+'.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg'}}" class="tn" width="200" height="160" >
+       </a>
+       
+      </div>
+
+    </div>
+  </div>
+</div>
+<small class="d-block text-right mt-3">
+  <br>
+  <br>
+  <br>
+    <pagination-controls (pageChange)="setPage(p=$event)" id="server"></pagination-controls>
+</small>
+
+
+
+
